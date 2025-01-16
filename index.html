@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Care Compass Hospitals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Smooth scrolling for navigation and visibility toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          // Smooth scrolling
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+
+            // Ensure the section is visible
+            target.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+<!-- Emergency and Appointment Section -->
+<section class="top-header">
+  <div class="container">
+    <div class="emergency-column">
+      <span class="emergency">Emergency: 123-456-7890</span>
+    </div>
+    <div class="appointment-column">
+      <a href="#appointment" class="appointment-link">Make an Appointment</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <img src="uploads/healthcare.jpg" alt="Care Compass Hospitals Logo" class="logo"> 
+      <h1>Care Compass Hospitals</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="login-btn">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+
+  <!-- Main Section -->
+  <main id="home" class="main">
+    <section class="welcome-section">
+      <h2>Welcome to Care Compass Hospitals</h2>
+      <p>
+        At Care Compass Hospitals, we provide world-class medical services to meet all your healthcare needs.
+        Explore our website to book appointments, access lab results, and learn more about our specialized treatments.
+      </p>
+    </section>
+
+    <section id="services" class="services-section">
+      <h3>Our Services</h3>
+      <div class="services-grid">
+        <!-- Service Cards -->
+        <div class="service-card">
+          <h4>Emergency Care</h4>
+          <p>24/7 emergency care for all critical situations.</p>
+        </div>
+        <div class="service-card">
+          <h4>Specialist Clinics</h4>
+          <p>Expert consultations in a wide range of specialties.</p>
+        </div>
+        <div class="service-card">
+          <h4>Laboratory Tests</h4>
+          <p>Comprehensive lab testing with quick results.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- Footer -->
+<footer id="contact" class="footer">
+  <div class="container">
+    <div class="footer-sections">
+      <!-- About Section -->
+      <div class="footer-about">
+        <h4>About Hemas Hospitals</h4>
+        <p>
+          Hemas Hospitals has embarked on a digital journey to be Sri Lanka’s No.1 Smart Hospital. 
+          We have already introduced many innovative digital health solutions including Telemedicine, 
+          Online pharmacy, Online laboratory portal, and Tele physiotherapy.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Hemas Group</a></li>
+          <li><a href="#">Video Gallery</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>389, Negombo Road, Wattala.</p>
+        <p>0117 888 888</p>
+        <p><a href="mailto:info@hemashospitals.com">info@hemashospitals.com</a></p>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>
+        © 2025 Hemas Hospitals. All Rights Reserved. | 
+        <a href="#">Copyright</a> | 
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Cookie Policy</a> | 
+        <a href="#">Patient Rights & Responsibilities</a> | 
+        <a href="#">Data Protection Notice</a>
+      </p>
+      <p>Design and Development by <a href="#">SABERION</a></p>
+    </div>
+  </div>
+</footer>
+
