@@ -1,9 +1,19 @@
 <?php
 session_start();
-if ($_SESSION['role_id'] != 2) {
-    header("Location: index.php");
-    exit;
+if (!isset($_SESSION['role_id']) || $_SESSION['role_id'] != 2) {
+    header("Location: login.php");
+    exit();
 }
-echo "<h1>Welcome, Hospital Staff</h1>";
-echo "<p>View schedules, update records here.</p>";
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Staff Dashboard</h1>
+    <p>You can manage patient records here.</p>
+    <a href="logout.php">Logout</a>
+</body>
+</html>

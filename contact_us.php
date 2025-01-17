@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             gap: 20px;
             padding: 50px 20px;
             color: white;
-            background: url('uploads/medical-staff-people-group-team.png') no-repeat center top;
+            background: url('uploads/index_bg.jpg') no-repeat center bottom;
             background-size: cover;
             text-align: center;
         }

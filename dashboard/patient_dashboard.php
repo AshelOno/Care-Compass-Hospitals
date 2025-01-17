@@ -1,9 +1,20 @@
 <?php
 session_start();
-if ($_SESSION['role_id'] != 3) {
-    header("Location: index.php");
-    exit;
+if (!isset($_SESSION['role_id']) || $_SESSION['role_id'] != 3) {
+    header("Location: login.php");
+    exit();
 }
-echo "<h1>Welcome, Patient</h1>";
-echo "<p>Schedule appointments and view medical records here.</p>";
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Patient Dashboard</h1>
+    <p>Manage your health records here.</p>
+    <a href="logout.php">Logout</a>
+</body>
+</html>
+
