@@ -1,40 +1,52 @@
 <?php
 session_start();
-include '../db.php';
+include '../db.php'; // Include your database connection
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize and validate inputs
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    $sql = "SELECT * FROM users WHERE username = :username";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-    $stmt->execute();
+    if (!empty($username) && !empty($password)) {
+        $sql = "SELECT * FROM users WHERE username = :username";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->execute();
 
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user_id'] = $user['user_id'];
-        $_SESSION['username'] = $user['username'];
-        $_SESSION['role_id'] = $user['role_id'];
-    
-        switch ($user['role_id']) {
-            case 1:
-                header("Location: admin_dashboard.php");
-                break;
-            case 2:
-                header("Location: staff_dashboard.php");
-                break;
-            case 3:
-                header("Location: patient_dashboard.php");
-                break;
+        if ($user && password_verify($password, $user['password'])) {
+            // Regenerate session ID to prevent session fixation
+            session_regenerate_id(true);
+            $_SESSION['user_id'] = $user['user_id'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['role_id'] = $user['role_id'];
+
+            // Redirect based on user role
+            switch ($user['role_id']) {
+                case 1:
+                    header("Location: admin_dashboard.php");
+                    break;
+                case 2:
+                    header("Location: staff_dashboard.php");
+                    break;
+                case 3:
+                    header("Location: patient_dashboard.php");
+                    break;
+                default:
+                    echo "Invalid role.";
+                    exit;
+            }
+            exit;
+        } else {
+            echo "Invalid username or password.";
         }
-        exit;
     } else {
-        echo "Invalid username or password.";
+        echo "Username and password are required.";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -45,10 +57,119 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="login.css">
     <title>Login Form</title>
+    <style>
+    /* General Styles */
+    body {
+        background-image: url('../uploads/index_bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: ily: 'Montserrat', sans-serif;
+        display: flex;
+        margin: 90px auto;
+}
+    
 
- <style>
+    .container {
+        background-color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+        position: relative;
+        overflow: hidden;
+        width: 768px;
+        max-width: 100%;
+        min-height: 480px;
+    }
+
+    .container button {
+        background-color: rgba(8, 97, 68, 0.9);;
+        color: #fff;
+        font-size: 12px;
+        padding: 10px 45px;
+        border: 1px solid transparent;
+        border-radius: 8px;100vh;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .container button.hidden {
+        background-color: transparent;
+        border-color: #fff;
+    }
+
+    .container form {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        height: 100%;
+    }
+
+    .container input {
+        background-color: #eee;
+        border: none;
+        margin: 8px 0;
+        padding: 10px 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        width: 100%;
+        outline: none;
+    }
+    .form-container {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+
+    .icon {
+        color: #888;
+        font-size: 20px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .icon:hover {
+        color: #25cc95;
+    }
+
+    .toggle-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        transition: all 0.6s ease-in-out;
+        border-radius: 150px 0 0 100px;
+        z-index: 1000;
+    }
+
+    .toggle {
+        background: linear-gradient(to right,  #25cc95,#077294);
+        color: #fff;
+        position: relative;
+        left: -100%;
+        height: 100%;
+        width: 200%;
+        animation: slideRight 0.6s forwards;
+    }
+
     /* Container for input and icon */
     .input-container {
         position: relative;
@@ -180,6 +301,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     .btn-secondary:hover {
         background-color: #1eab7d;
         color: white;
+    }
+    @keyframes slideRight {
+        0% {
+            left: -100%;
+        }
+        100% {
+            left: 0;
+        }
     }
 </style>
 
