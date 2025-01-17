@@ -1,7 +1,7 @@
 <?php
 session_start();
-include '../header.php';
-include '../db.php';
+include 'header.php';
+include 'db.php';
 
 // Check connection
 if ($conn->connect_error) {
@@ -223,4 +223,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
-<?php include '../footer.php'; ?>
+<?php include 'footer.php'; ?>
