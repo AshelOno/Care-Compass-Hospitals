@@ -7,7 +7,7 @@
     <p class="tagline">Join us in making a difference with <span class="tagline-highlight">passion and excellence</span>.</p>
     <div class="cta-buttons">
         <a href="#learn-more">Learn More</a>
-        <a href="include/contact_us.php">Contact Us</a>
+        <a href="contact_us.php">Contact Us</a>
     </div>
 </section>
 
@@ -39,7 +39,7 @@
     margin: 0;
     padding: 0;
     background-color: #f4f7fc;
-    background-image: url('uploads/index_bg.jpg'); /* Add your image path here */
+    background-image: url('uploads/index_bg.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Optional: for a fixed background effect */

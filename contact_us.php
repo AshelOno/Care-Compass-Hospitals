@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .contact-us {
             padding: 50px 20px;
             color: white;
-            background: url('../uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center;
+            background: url('uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center;
             background-size: cover;
             text-align: center;
         }
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             gap: 20px;
             padding: 50px 20px;
             color: white;
-            background: url('../uploads/medical-staff-people-group-team.png') no-repeat center top;
+            background: url('uploads/medical-staff-people-group-team.png') no-repeat center top;
             background-size: cover;
             text-align: center;
         }

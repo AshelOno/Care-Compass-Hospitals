@@ -12,10 +12,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f7fc;
-    background-image: url('uploads/index_bg.jpg'); /* Add your image path here */
-    background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Optional: for a fixed background effect */
+    background-attachment: fixed; 
   }
   
   .hidden {
@@ -110,7 +108,7 @@ body {
     text-decoration: underline;
   }
   </style>
-  
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -143,10 +141,10 @@ body {
     <h1>Care Compass Hospitals</h1>
     <nav>
       <ul class="nav-list">
-        <li><a href="#home">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="include/contact_us.php">Contact Us</a></li>
+        <li><a href="contact_us.php">Contact Us</a></li>
         <a href="login.php">Login</a>
       </ul>
     </nav>
