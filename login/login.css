@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    background-image: url('uploads/index_bg.jpg');
+    background-image: url('../uploads/index_bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
@@ -8,8 +8,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+    height: ily: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -29,7 +28,8 @@ body {
     font-size: 12px;
     padding: 10px 45px;
     border: 1px solid transparent;
-    border-radius: 8px;
+    border-radius: 8px;100vh;
+    font-fam
     font-weight: 600;
     letter-spacing: 0.5px;
     margin-top: 10px;
