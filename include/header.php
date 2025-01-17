@@ -23,10 +23,10 @@
 <section class="top-header">
   <div class="container">
     <div class="emergency-column">
-      <span class="emergency">Emergency: 123-456-7890</span>
+      <a href="#emergency" class="emergency">Emergency: 123-456-7890</a>
     </div>
     <div class="appointment-column">
-      <a href="#appointment" class="appointment-link">Make an Appointment</a>
+      <a href="include/book_appoinment.php" class="appointment-link">Make an Appointment</a>
     </div>
   </div>
 </section>

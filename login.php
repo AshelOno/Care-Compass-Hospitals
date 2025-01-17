@@ -2,50 +2,40 @@
 session_start();
 include 'db.php';
 
-// Handle form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
-    $role = $_POST['role'];
 
-    if (!empty($username) && !empty($password) && !empty($role)) {
-        // Prepare SQL query with placeholders
-        $sql = "SELECT * FROM users WHERE username = :username AND role = :role";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':role', $role);
-        $stmt->execute();
+    $sql = "SELECT * FROM users WHERE username = :username";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+    $stmt->execute();
 
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user['password'])) {
-            // Password matches, start session and redirect
-            session_start();
-            $_SESSION['username'] = $username;
-            $_SESSION['role'] = $role;
-
-            switch ($role) {
-                case 'Admin':
-                    header("Location: admin_dashboard.php");
-                    break;
-                case 'Staff':
-                    header("Location: staff_dashboard.php");
-                    break;
-                case 'Patient':
-                    header("Location: patient_dashboard.php");
-                    break;
-                default:
-                    echo "Invalid role.";
-            }
-            exit;
-        } else {
-            $error = "Invalid username, password, or role.";
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['user_id'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['role_id'] = $user['role_id'];
+    
+        switch ($user['role_id']) {
+            case 1:
+                header("Location: admin_dashboard.php");
+                break;
+            case 2:
+                header("Location: staff_dashboard.php");
+                break;
+            case 3:
+                header("Location: patient_dashboard.php");
+                break;
         }
+        exit;
     } else {
-        $error = "All fields are required.";
+        echo "Invalid username or password.";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -228,7 +218,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="password" id="password" name="password" placeholder="Password" required>
                     <i class="fas fa-lock icon"></i>
                 </div>
-                <button type="button" class="btn btn-primary" onclick="validateLoginForm()">Login</button>
+                <button type="submit" class="btn btn-primary" onclick="validateLoginForm()">Login</button>
             </form>
         </div>
 
