@@ -186,7 +186,7 @@
     .subscription-form button {
     padding: 12px 20px;
     }
-    
+
     /* Footer */
     .footer {
     border-top: 2px solid #ddd;
@@ -276,4 +276,20 @@
     color: #ffcc00;
   }
 
+    /* Responsive Design */
+    @media (max-width: 768px) {  
+    .footer-sections {
+      flex-direction: column;
+    }
+
+    .subscription-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .subscription-form input[type="email"], 
+    .subscription-form button {
+        width: 100%;
+    }
+  }
 </style>

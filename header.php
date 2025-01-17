@@ -107,6 +107,24 @@ body {
   .nav-list a:hover {
     text-decoration: underline;
   }
+
+ /* Responsive Design */
+  @media (max-width: 768px) {
+    .top-header, .header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .header h1 {
+      padding-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .nav-list {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
   </style>
 
   <script>

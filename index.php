@@ -39,7 +39,7 @@
     margin: 0;
     padding: 0;
     background-color: #f4f7fc;
-    background-image: url('uploads/index_bg.jpg'); 
+    background-image: url('uploads/index_bg.jpg'); /* Add your image path here */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Optional: for a fixed background effect */
@@ -168,40 +168,11 @@
 
 
   /* Responsive Design */
-  @media (max-width: 768px) {
-    .top-header, .header {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .header h1 {
-      padding-right: 0;
-      margin-bottom: 10px;
-    }
-  
-    .nav-list {
-      flex-direction: column;
-      gap: 15px;
-    }
-  
+  @media (max-width: 768px) {  
     .services-grid {
       grid-template-columns: 1fr;
-    }
-  
-    .footer-sections {
-      flex-direction: column;
-    }
-
-    .subscription-form {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .subscription-form input[type="email"], 
-    .subscription-form button {
-        width: 100%;
-    }
-    
+    } 
+   
     /* Media Queries for Welcome Section */
     .welcome-section {
         padding: 40px 20px;
