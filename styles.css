@@ -1,303 +1,188 @@
-/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f7fc;
-  }
-  
-  .hidden {
-    display: none;
-  }
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
-/* Top Header */
-.top-header {
-    display: flex;
-    background-color: #fff;
-    color: #fff;
-    padding: 10px 0;
-  }
-  
-  .top-header .container {
-    display: flex;
-    margin: 0 auto;
-    width: 100%;
-  }
-  
-  .top-header .emergency-column {
-    flex: 1;
-    background-color: #077294;
-    text-align: center;
-    padding: 10px 15px;
-  }
-  
-  .top-header .appointment-column {
-    flex: 1;
-    background-color: #25cc95; 
-    text-align: center;
-    padding: 10px 15px;
-  }
-  
-  .top-header .emergency {
-    font-size: 16px;
-  }
-  
-  .top-header .appointment-link {
-    font-size: 16px;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .top-header .appointment-link:hover {
-    text-decoration: underline;
-  }
- 
-/* Header */
-.header {
-    background-color: white;
-    color: #00667c;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Container for header items */
-  .header .container {
-    justify-content: flex-start; 
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  
-  /* Title Styling */
-  .header h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    text-align: left;
-    font-weight: 600;
-    padding-right: 550px;
-    padding-left: 0; 
-  }
-  
-  /* Logo Styling */
-  .logo {
-    width: 100px; /* Adjust the size of the logo */
-    height: auto;
-    padding-left: 5;
-  }
-  
-  /* Navigation List */
-  .nav-list {
-    justify-content: end;
-    list-style: none;
-    text-align: right;
-    display: flex;
-    gap: 25px;
-    margin-left: auto; /* Pushes the list items to the right */
-  }
-  
-  /* First Item Alignment to Left */
-  .nav-list li:first-child {
-    margin-right: auto; /* Pushes the first item to the left */
-  }
-  
-  /* Navigation Link/Buttons Styling */
-  .nav-list a,
-  .nav-list button {
-    color:  #00667c;
-    text-decoration: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-weight: 500;
-    text-transform: uppercase;
-  }
-  
-  .nav-list a:hover,
-  .nav-list button:hover {
-    text-decoration: underline;
-  }
-  
-  /* Main Section */
-  .main {
-    padding: 40px 20px;
-  }
-/* Main Section */
-.main {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9; /* Light background for contrast */
-  }
-  
-  /* Welcome Section */
-  .welcome-section {
-    text-align: center;
-    margin-bottom: 40px;
-    background-color: #367589; /* Dark Teal */
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .welcome-section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .welcome-section p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  /* Services Section */
-  .services-section {
-    padding: 20px 0;
-  }
-  
-  .services-section h3 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  /* Service Cards */
-  .service-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .service-card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #367589;
-  }
-  
-  .service-card p {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.4;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-/* Footer */
-.footer {
-    background-color: #1f2e44; /* Dark Blue */
-    color: #fff;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
-    font-size: 0.9rem;
-  }
-  
-  .footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .footer-sections {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  
-  .footer-about,
-  .footer-links,
-  .footer-contact {
-    flex: 1 1 calc(33.333% - 20px); /* Flexible columns */
-    min-width: 250px;
-  }
-  
-  .footer h4 {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    color: #ffcc00; /* Highlight color for headings */
-  }
-  
-  .footer p {
-    line-height: 1.6;
-  }
-  
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-links ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-links ul li a:hover {
-    color: #ffcc00;
-  }
-  
-  .footer-contact a {
-    color: #ffcc00;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-contact a:hover {
-    text-decoration: underline;
-  }
-  
-  .social-links a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 15px;
-    font-size: 1rem;
-  }
-  
-  .social-links a:hover {
-    color: #ffcc00;
-  }
-  
-  .footer-bottom {
-    margin-top: 30px;
-    text-align: center;
-    border-top: 1px solid #3a4a62;
-    padding-top: 20px;
-  }
-  
-  .footer-bottom a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-bottom a:hover {
-    color: #ffcc00;
-  }
+header {
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+}
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f7fc;
-    background-image: url('uploads/index_bg.jpg'); /* Add your image path here */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Optional: for a fixed background effect */
-  }
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+}
+
+main {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, textarea, button {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+}
+
+main {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, textarea, button {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.subscription-section {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.subscription-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.subscription-section input[type="email"] {
+  padding: 10px;
+  font-size: 1rem;
+  width: 60%;
+  max-width: 400px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.subscription-section button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscription-section button:hover {
+  background-color: #45a049;
+}
