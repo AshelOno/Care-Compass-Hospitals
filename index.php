@@ -1,4 +1,4 @@
-<?php include 'include/header.php';?>
+<?php include 'header.php';?>
 
 <!-- Welcome Section -->
 <section class="welcome-section">
@@ -31,24 +31,4 @@
     </div>
 </section>
 
-<!-- Subscription Section -->
-<section class="subscription-section">
-    <style>
-
-
-    </style>
-    <h2>Stay Updated with Our Latest News & Offers</h2>
-    <p>Subscribe to receive exclusive promotions, health tips, and updates from Care Compass Hospitals.</p>
-    <form action="#" class="subscription-form" aria-label="Subscription Form">
-        <input 
-            type="email" 
-            placeholder="Enter your email address" 
-            required 
-            aria-label="Email Address"
-        >
-        <button type="submit" aria-label="Subscribe to Newsletter">Subscribe</button>
-    </form>
-</section>
-
-
-<?php include 'include/footer.php'; ?>
+<?php include 'footer.php'; ?>

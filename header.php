@@ -5,7 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Care Compass Hospitals</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="index.css">
+  <style>
+    /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    background-image: url('uploads/index_bg.jpg'); /* Add your image path here */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: for a fixed background effect */
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Top Header */
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+  
+  .top-header .container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .top-header .emergency-column,
+  .top-header .appointment-column {
+    flex: 1;
+    text-align: center;
+    padding: 10px 15px;
+    color: #fff;
+  }
+  
+  .top-header .emergency-column {
+    background-color: #077294;
+  }
+  
+  .top-header .appointment-column {
+    background-color: #25cc95;
+  }
+  
+  .top-header a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .top-header a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #00667c;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+  }
+  
+  .header .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    padding-right: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav-list {
+    display: flex;
+    margin-left: auto;
+    list-style: none;
+    gap: 25px;
+  }
+  
+  .nav-list a {
+    color: #00667c;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .nav-list a:hover {
+    text-decoration: underline;
+  }
+  </style>
+  
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
