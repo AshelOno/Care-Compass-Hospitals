@@ -1,0 +1,144 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Compass Hospital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9e8ec;
+        }
+        header {
+            background-color: hsl(210, 15%, 92%);
+            color: blue;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header img {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #1a4d80;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2869aa;
+        }
+        .discount {
+            text-align: center;
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .ongoing-consultation {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .ongoing-consultation a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <!-- Logo Section -->
+    <img src="uploads/healthcare.jpg" alt="Logo"> <!-- Replace with your logo file -->
+    <h1>Care Compass Hospital</h1>
+</header>
+
+<div class="container">
+    <!-- Discount Section -->
+    <div class="discount">
+        Save up to Rs. 400/=
+    </div>
+
+    <h2>Book Your Appointment</h2>
+    
+    <!-- Appointment Form -->
+    <form action="appointment.html" method="POST">
+        <!-- Doctor's Name -->
+        <div class="form-group">
+            <label for="doctor">Doctor (Max 20 Characters)</label>
+            <input type="text" id="doctor" name="doctor" maxlength="20" required>
+        </div>
+
+           <!-- Specialization -->
+        <div class="form-group">
+            <label for="specialization">Any Specialization</label>
+            <select id="specialization" name="specialization" required>
+                <option value="cardiologist">Cardiologist</option>
+                <option value="neurologist">Neurologist</option>
+                <option value="dermatologist">Dermatologist</option>
+                <option value="orthopedist">Orthopedist</option>
+                <option value="pediatrician">Pediatrician</option>
+                <option value="general">General</option>
+            </select>
+        </div>
+
+        <!-- Hospital -->
+        <div class="form-group">
+            <label for="hospital">Any Hospital</label>
+            <input type="text" id="hospital" name="hospital" required>
+        </div>
+
+        <!-- Date -->
+        <div class="form-group">
+            <label for="date">Any Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    <!-- Ongoing Consultation Link -->
+    <div class="ongoing-consultation">
+        <p>View your <a href="ongoing-consultations.html">Ongoing Consultations</a></p>
+    </div>
+</div>
+
+</body>
+</html>
+ 
+
+ 
