@@ -55,19 +55,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .contact-us {
             padding: 50px 20px;
             color: white;
-            background: url('uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center;
-            background-size: cover;
+            background: url('uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
             text-align: center;
+            position: relative;
+        }
+
+        .contact-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 0;
+        }
+
+        .contact-header {
+            position: relative;
+            z-index: 1;
         }
 
         .contact-header h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.1rem;
+            margin-bottom: 15px;
         }
 
         .contact-header p {
-            font-size: 1.1rem;
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
+
 
         /* Contact Details Section */
         .contact-details {
@@ -174,8 +193,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="contact-us">
         <div class="contact-header">
             <h1>CONTACT US</h1>
-            <p>We are committed to improving our service and scaling new heights each<br> year. We welcome your valuable
-                advice and feedback to <br>serve you better.</p>
+            <p>We are committed to improving our service and scaling new heights each year.<br>We welcome your valuable
+                advice and feedback to serve you<br> better.</p>
         </div>
     </section>
 
