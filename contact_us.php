@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .contact-us {
             padding: 50px 20px;
             color: white;
-            background: url('uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
+            background: url('uploads/healthcare-people-group-professi.jpg') no-repeat center center / cover;
             text-align: center;
             position: relative;
         }
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
 
