@@ -2,14 +2,10 @@
 <section class="subscription-section">
     <h2>Stay Updated with Our Latest News & Offers</h2>
     <p>Subscribe to receive exclusive promotions, health tips, and updates from Care Compass Hospitals.</p>
-    <form action="#" class="subscription-form" aria-label="Subscription Form">
-        <input 
-            type="email" 
-            placeholder="Enter your email address" 
-            required 
-            aria-label="Email Address"
-        >
-        <button type="submit" aria-label="Subscribe to Newsletter">Subscribe</button>
+    <form action="index.php" method="POST" class="subscription-form">
+        <input type="email" name="email" placeholder="Enter your email address" required>
+        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+        <button type="submit">Subscribe</button>
     </form>
 </section>
 
@@ -49,7 +45,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-    <p>
+      <p>
         © 2025 Care Compass Hospitals. All Rights Reserved. | 
         <a href="#">Copyright</a> | 
         <a href="#">Privacy Policy</a> | 
