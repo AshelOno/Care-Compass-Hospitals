@@ -1,4 +1,49 @@
-<?php include 'header.php';?>
+<?php
+session_start();
+include 'db.php';
+include 'header.php';
+
+// CSRF token generation
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Handle subscription form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // CSRF validation
+    if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        die("Invalid CSRF token.");
+    }
+
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script>alert('Invalid email address. Please try again.');</script>";
+    } else {
+        $stmt = $conn->prepare("SELECT * FROM subscribers WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            echo "<script>alert('This email is already subscribed.');</script>";
+        } else {
+            $stmt = $conn->prepare("INSERT INTO subscribers (email) VALUES (?)");
+            $stmt->bind_param("s", $email);
+
+            if ($stmt->execute()) {
+                echo "<script>alert('Thank you for subscribing!');</script>";
+            } else {
+                echo "<script>alert('An error occurred. Please try again later.');</script>";
+            }
+        }
+
+        $stmt->close();
+    }
+}
+
+$conn->close(); 
+?>
 
 <!-- Welcome Section -->
 <section class="welcome-section">
