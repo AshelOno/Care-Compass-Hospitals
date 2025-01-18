@@ -1,3 +1,14 @@
+
+<?php
+// Function to render sections dynamically
+function render_section($id, $title, $content) {
+    echo "<section id='$id' class='section'>";
+    echo "<h2>$title</h2>";
+    echo "<p>$content</p>";
+    echo "</section>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +46,7 @@
         .header {
             padding: 50px 20px;
             color: white;
-            background: url('uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
+            background: url('../uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
             text-align: center;
             position: relative;
         }
@@ -83,75 +94,74 @@
         }
 
         .nav {
-    background-color: #63cc7d;
-    color: white;
-    padding: 10px 5%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    text-transform: uppercase;
-}
+            background-color: #63cc7d;
+            color: white;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            text-transform: uppercase;
+        }
 
-.navbar {
-    display: flex;
-    gap: 25px; /* Space between the links */
-    align-items: center;
-}
+        .navbar {
+            display: flex;
+            gap: 25px; /* Space between the links */
+            align-items: center;
+        }
 
-.navbar a {
-    font-weight: bold;
-    font-size: 1rem;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-    word-spacing: 2px; /* Adjust this value for word spacing */
-}
+        .navbar a {
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            word-spacing: 2px; /* Adjust this value for word spacing */
+        }
 
-.navbar a:hover {
-    background-color: #52a96b;
-}
+        .navbar a:hover {
+            background-color: #52a96b;
+        }
 
-/* Responsive Navbar */
-.navbar-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: white;
-    background: none;
-    border: none;
-    padding: 5px;
-}
+        /* Responsive Navbar */
+        .navbar-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
 
-.navbar-menu {
-    display: flex;
-    flex-direction: row; /* Default behavior */
-    gap: 10px;
-}
+        .navbar-menu {
+            display: flex;
+            flex-direction: row; /* Default behavior */
+            gap: 10px;
+        }
 
-@media (max-width: 768px) {
-    .navbar-menu {
-        display: none; /* Hidden by default */
-        flex-direction: column; /* Stacks items vertically */
-        gap: 10px;
-        background-color: #63cc7d;
-        padding: 10px;
-        position: absolute;
-        top: 100%; /* Below the navbar */
-        left: 0;
-        right: 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 8px 8px;
-    }
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none; /* Hidden by default */
+                flex-direction: column; /* Stacks items vertically */
+                gap: 10px;
+                background-color: #63cc7d;
+                padding: 10px;
+                position: absolute;
+                top: 100%; /* Below the navbar */
+                left: 0;
+                right: 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 0 0 8px 8px;
+            }
 
-    .navbar-toggle {
-        display: block; /* Shows the toggle button */
-    }
+            .navbar-toggle {
+                display: block; /* Shows the toggle button */
+            }
 
-    .navbar-menu.active {
-        display: flex; /* Displays the menu when active */
-    }
-}
-
+            .navbar-menu.active {
+                display: flex; /* Displays the menu when active */
+            }
+        }
 
         /* Sections */
         .section {
@@ -178,7 +188,6 @@
     </style>
 </head>
 <body>
-
 
     <!-- Header Section -->
     <section class="header">
@@ -214,37 +223,15 @@
 
     <!-- Main Content -->
     <main>
-        <section id="about" class="section">
-            <h2>About Care Compass Hospitals</h2>
-            <p>Welcome to Care Compass Hospitals. Our internationally accredited facilities ensure patient safety with highly specialized medical care, including tertiary and super-specialty services.</p>
-        </section>
-
-        <section id="vision-mission" class="section">
-            <h2>Vision & Mission</h2>
-            <p>Our vision and mission revolve around providing superior healthcare services and ensuring patient safety while adhering to international standards.</p>
-        </section>
-
-        <section id="promise" class="section">
-            <h2>Our Promise</h2>
-            <p>We promise to deliver the best possible care with highly skilled professionals, modern technology, and a compassionate approach to healing.</p>
-        </section>
-
-        <section id="awards" class="section">
-            <h2>Accreditations & Awards</h2>
-            <p>Care Compass Hospitals is the first internationally accredited hospital chain in Sri Lanka, recognized for providing superior healthcare services and adhering to global best practices.</p>
-        </section>
-
-        <section id="services" class="section">
-            <h2>Our Services</h2>
-            <p>We provide comprehensive preventive and curative healthcare, supported by state-of-the-art facilities and a wide network of diagnostic labs to ensure accurate results and superior outcomes.</p>
-        </section>
-
-        <section id="care" class="section">
-            <h2>We Take Care of You</h2>
-            <p>Our ultra-clean environments, experienced healthcare professionals, and well-designed rooms ensure comfort and expedited recovery for you and your loved ones.</p>
-        </section>
+        <?php
+        render_section('about', 'About Care Compass Hospitals', 'Welcome to Care Compass Hospitals. Our internationally accredited facilities ensure patient safety with highly specialized medical care, including tertiary and super-specialty services.');
+        render_section('vision-mission', 'Vision & Mission', 'Our vision and mission revolve around providing superior healthcare services and ensuring patient safety while adhering to international standards.');
+        render_section('promise', 'Our Promise', 'We promise to deliver the best possible care with highly skilled professionals, modern technology, and a compassionate approach to healing.');
+        render_section('awards', 'Accreditations & Awards', 'Care Compass Hospitals is the first internationally accredited hospital chain in Sri Lanka, recognized for providing superior healthcare services and adhering to global best practices.');
+        render_section('services', 'Our Services', 'We provide comprehensive preventive and curative healthcare, supported by state-of-the-art facilities and a wide network of diagnostic labs to ensure accurate results and superior outcomes.');
+        render_section('care', 'We Take Care of You', 'Our ultra-clean environments, experienced healthcare professionals, and well-designed rooms ensure comfort and expedited recovery for you and your loved ones.');
+        ?>
     </main>
-
 
     <script>
         function toggleNavbar() {
@@ -254,3 +241,4 @@
     </script>
 </body>
 </html>
+<?php include '../footer.php'; ?>
