@@ -42,7 +42,7 @@
       </div>
       <div class="footer-contact">
         <h4>Contact Us</h4>
-        <p>389, Negombo Road, Wattala.</p>
+        <p>389, Pannapitiya Road, Colombo.</p>
         <p>0117 888 888</p>
         <p><a href="mailto:info@carecompasshospitals.com">info@carecompasshospitals.com</a></p>
         <div class="social-links">

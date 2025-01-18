@@ -201,31 +201,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Contact Details Section -->
     <section class="contact-details">
         <div class="location">
-            <h2>HEMAS HOSPITAL</h2>
-            <p><strong>WATTALA</strong></p>
-            <p>389, Negombo Road, Wattala.</p>
+            <h2>CARE COMPASS HOSPITAL</h2>
+            <p><strong>KANDY</strong></p>
+            <p>389, Nugegoda Road, Kandy.</p>
             <p>0117 888 888</p>
-            <p>info@hemashospitals.com</p>
+            <p>info@carecompasshospitals.com</p>
         </div>
         <div class="location">
-            <h2>HEMAS HOSPITAL</h2>
-            <p><strong>THALAWATUGODA</strong></p>
-            <p>647/2a, Pannipitiya Road, Thalawatugoda.</p>
+            <h2>CARE COMPASS HOSPITAL</h2>
+            <p><strong>COLOMBO</strong></p>
+            <p>647/2a, Pannipitiya Road, Colombo.</p>
             <p>0117 888 888</p>
-            <p>info@hemashospitals.com</p>
+            <p>info@carecompasshospitals.com</p>
         </div>
         <div class="location">
-            <h2>HEMAS HOSPITAL</h2>
-            <p><strong>THALAWATUGODA</strong></p>
-            <p>647/2a, Pannipitiya Road, Thalawatugoda.</p>
+            <h2>CARE COMPASS HOSPITAL</h2>
+            <p><strong>KURUNAGALLA</strong></p>
+            <p>647/2a, Pannala Road, kurunagalla.</p>
             <p>0117 888 888</p>
-            <p>info@hemashospitals.com</p>
+            <p>info@carecompasshospitals.com</p>
         </div>
     </section>
 
     <!-- Contact Form Section -->
     <section class="contact-form">
-        <h2>Contact Hemas Hospitals</h2>
+        <h2>Contact Care Compass Hospitals</h2>
         <p>Please complete the form below, so we can provide quick and efficient service.</p>
         <form action="contact_us.php" method="POST">
             <input type="text" id="name" name="name" placeholder="Full Name (required)" required aria-label="Full Name">
