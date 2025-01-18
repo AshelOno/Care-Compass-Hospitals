@@ -206,12 +206,12 @@ function render_section($id, $title, $content) {
                 <nav>
                     <span class="navbar-toggle" onclick="toggleNavbar()">☰</span>
                     <div class="navbar-menu">
-                        <a href="#about">About Us</a>
-                        <a href="#vision-mission">Vision & Mission</a>
-                        <a href="#promise">Our Promise</a>
+                        <a href="#about">AboutUs</a>
+                        <a href="#vision-mission">Vision&Mission</a>
+                        <a href="#promise">OurPromise</a>
                         <a href="#awards">Accreditations</a>
                         <a href="#services">Services</a>
-                        <a href="#care">Care for You</a>
+                        <a href="#care">CareforYou</a>
                     </div>
                 </nav>
             </div>
