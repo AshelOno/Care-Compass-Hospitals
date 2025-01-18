@@ -118,6 +118,7 @@
     padding: 60px 20px; /* Added padding for better spacing around the section */
   }
   
+  
   .services-section h3 {
     text-align: center;
     font-size: 2rem; /* Slightly increased font size for better emphasis */
