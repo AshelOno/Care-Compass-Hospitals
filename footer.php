@@ -1,9 +1,5 @@
 <!-- Subscription Section -->
 <section class="subscription-section">
-    <style>
-
-
-    </style>
     <h2>Stay Updated with Our Latest News & Offers</h2>
     <p>Subscribe to receive exclusive promotions, health tips, and updates from Care Compass Hospitals.</p>
     <form action="#" class="subscription-form" aria-label="Subscription Form">
