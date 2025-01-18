@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../db.php'; // Include your database connection
+include '../db.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize and validate inputs
@@ -8,36 +8,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim($_POST['password']);
 
     if (!empty($username) && !empty($password)) {
-        $sql = "SELECT * FROM users WHERE username = :username";
+        $sql = "SELECT * FROM users WHERE username = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bind_param('s', $username); // Bind the username to the placeholder
         $stmt->execute();
+        $result = $stmt->get_result();
 
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
 
-        if ($user && password_verify($password, $user['password'])) {
-            // Regenerate session ID to prevent session fixation
-            session_regenerate_id(true);
-            $_SESSION['user_id'] = $user['user_id'];
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['role_id'] = $user['role_id'];
+            // Verify the password
+            if (password_verify($password, $user['password'])) {
+                // Regenerate session ID to prevent session fixation
+                session_regenerate_id(true);
+                $_SESSION['user_id'] = $user['user_id'];
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['role_id'] = $user['role_id'];
 
-            // Redirect based on user role
-            switch ($user['role_id']) {
-                case 1:
-                    header("Location: admin_dashboard.php");
-                    break;
-                case 2:
-                    header("Location: staff_dashboard.php");
-                    break;
-                case 3:
-                    header("Location: patient_dashboard.php");
-                    break;
-                default:
-                    echo "Invalid role.";
-                    exit;
+                // Redirect based on user role
+                switch ($user['role_id']) {
+                    case 1:
+                        header("Location: ../dashboard\admin_dashboard.php");
+                        break;
+                    case 2:
+                        header("Location: staff_dashboard.php");
+                        break;
+                    case 3:
+                        header("Location: patient_dashboard.php");
+                        break;
+                    default:
+                        echo "Invalid role.";
+                        exit;
+                }
+                exit;
+            } else {
+                echo "Invalid username or password.";
             }
-            exit;
         } else {
             echo "Invalid username or password.";
         }
@@ -46,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -332,7 +339,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="custom-option" onclick="selectOption('patient')"><i class="fas fa-procedures"></i> Patient</div>
                         <div class="custom-option" onclick="selectOption('staff')"><i class="fas fa-hospital-user"></i> H Staff</div>
                     </div>
-                    <select id="role" name="role" hidden>
+                    <select id="role" name="role" required>
+                        <option value="">Select Role</option>
                         <option value="admin">Admin</option>
                         <option value="patient">Patient</option>
                         <option value="staff">H Staff</option>
@@ -347,7 +355,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="password" id="password" name="password" placeholder="Password" required>
                     <i class="fas fa-lock icon"></i>
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="validateLoginForm()">Login</button>
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>
 

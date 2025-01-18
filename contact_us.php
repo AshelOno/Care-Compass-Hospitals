@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .contact-header h1 {
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.1rem;
         }
 
         .contact-header p {
@@ -174,8 +174,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <section class="contact-us">
         <div class="contact-header">
             <h1>CONTACT US</h1>
-            <p>We are committed to improving our service and scaling new heights each year. We welcome your valuable
-                advice and feedback to serve you better.</p>
+            <p>We are committed to improving our service and scaling new heights each<br> year. We welcome your valuable
+                advice and feedback to <br>serve you better.</p>
         </div>
     </section>
 
