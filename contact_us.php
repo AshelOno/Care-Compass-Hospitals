@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 10px;
             padding: 50px 20px;
             color: white;
             background: url('uploads/index_bg.jpg') no-repeat center bottom;
