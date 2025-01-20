@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "<script>alert('Invalid email address. Please try again.');</script>";
+        $_SESSION['message'] = "Invalid email address. Please try again.";
     } else {
         $stmt = $conn->prepare("SELECT * FROM subscribers WHERE email = ?");
         $stmt->bind_param("s", $email);
@@ -26,23 +26,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            echo "<script>alert('This email is already subscribed.');</script>";
+            $_SESSION['message'] = "This email is already subscribed.";
         } else {
             $stmt = $conn->prepare("INSERT INTO subscribers (email) VALUES (?)");
             $stmt->bind_param("s", $email);
 
             if ($stmt->execute()) {
-                echo "<script>alert('Thank you for subscribing!');</script>";
+                $_SESSION['message'] = "Thank you for subscribing!";
             } else {
-                echo "<script>alert('An error occurred. Please try again later.');</script>";
+                $_SESSION['message'] = "An error occurred. Please try again later.";
             }
         }
 
         $stmt->close();
     }
-}
 
-$conn->close(); 
+    $conn->close(); 
+
+    // Redirect to avoid form resubmission
+    header("Location: index.php");
+    exit();
+}
 ?>
 
 <!-- Welcome Section -->

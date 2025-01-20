@@ -2,6 +2,13 @@
 <section class="subscription-section">
     <h2>Stay Updated with Our Latest News & Offers</h2>
     <p>Subscribe to receive exclusive promotions, health tips, and updates from Care Compass Hospitals.</p>
+    <?php
+    // Display alert if there is a message
+    if (!empty($_SESSION['message'])) {
+        echo "<script>alert('" . $_SESSION['message'] . "');</script>";
+        unset($_SESSION['message']); // Clear message after displaying
+    }
+    ?>
     <form action="index.php" method="POST" class="subscription-form">
         <input type="email" name="email" placeholder="Enter your email address" required>
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
@@ -153,8 +160,8 @@
     }
 
     .subscription-form button:hover {
-    background-color: #25cc95;
-    color: #fff;
+    background-color: #00667c;
+    color: #f4f7fc;
     transform: translateY(-2px);
     }
 
@@ -170,7 +177,7 @@
     }
 
     .subscription-form input[type="email"]:focus {
-    border: 2px solid #fff;
+    border: 2px solid #f4f7fc;
     background-color: #f9f9f9;
     }
 
