@@ -4,11 +4,11 @@ class Database
 {
     private $host = 'localhost';
     private $db_name = 'care_compass_hospitals';
-    private $username = 'root'; // Update if using a custom username
-    private $password = ''; // Update if your MySQL has a password
-    public $conn;
+    private $username = 'root';
+    private $password = '';
+    private $conn;
 
-    public function getConnection()
+    public function connect()
     {
         $this->conn = null;
 
@@ -19,8 +19,8 @@ class Database
                 $this->password
             );
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $exception) {
-            echo "Connection error: " . $exception->getMessage();
+        } catch (PDOException $e) {
+            echo "Connection error: " . $e->getMessage();
         }
 
         return $this->conn;
