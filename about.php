@@ -1,5 +1,5 @@
-
 <?php
+include 'header.php';
 // Function to render sections dynamically
 function render_section($id, $title, $content) {
     echo "<section id='$id' class='section'>";
@@ -43,15 +43,15 @@ function render_section($id, $title, $content) {
         }
 
         /* Header Section */
-        .header {
+        .hero1 {
             padding: 50px 20px;
             color: white;
-            background: url('../uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
+            background: url('uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
             text-align: center;
             position: relative;
         }
 
-        .header::before {
+        .hero1::before {
             content: '';
             position: absolute;
             top: 0;
@@ -62,17 +62,17 @@ function render_section($id, $title, $content) {
             z-index: 0;
         }
 
-        .header-content {
+        .hero1-content {
             position: relative;
             z-index: 1;
         }
 
-        .header h1 {
+        .hero1 h1 {
             font-size: 2.5rem;
             margin-bottom: 15px;
         }
 
-        .header p {
+        .hero1 p {
             font-size: 1rem;
             max-width: 800px;
             margin: 0 auto;
@@ -94,18 +94,17 @@ function render_section($id, $title, $content) {
         }
 
         .nav {
-            background-color: #63cc7d;
+            background-color: #25cc95;
             color: white;
             padding: 10px 5%;
             display: flex;
             justify-content: left;
             align-items: center;
-            text-transform: uppercase;
         }
 
         .navbar {
             display: flex;
-            gap: 25px; /* Space between the links */
+            gap: 10px; 
             align-items: center;
         }
 
@@ -115,7 +114,7 @@ function render_section($id, $title, $content) {
             padding: 5px 10px;
             border-radius: 5px;
             transition: background-color 0.3s ease-in-out;
-            word-spacing: 2px; /* Adjust this value for word spacing */
+            word-spacing: 4px; 
         }
 
         .navbar a:hover {
@@ -190,8 +189,8 @@ function render_section($id, $title, $content) {
 <body>
 
     <!-- Header Section -->
-    <section class="header">
-        <div class="header-content">
+    <section class="hero1">
+        <div class="hero1-content">
             <h1>About Care Compass Hospitals</h1>
             <p>At Hemas Hospitals, we strive to offer you international standard care assured with safety, best clinical outcomes, and customer experience.</p>
         </div>
@@ -207,12 +206,12 @@ function render_section($id, $title, $content) {
                 <nav>
                     <span class="navbar-toggle" onclick="toggleNavbar()">☰</span>
                     <div class="navbar-menu">
-                        <a href="#about">About Us</a>
-                        <a href="#vision-mission">Vision & Mission</a>
-                        <a href="#promise">Our Promise</a>
+                        <a href="#about">AboutUs</a>
+                        <a href="#vision-mission">Vision&Mission</a>
+                        <a href="#promise">OurPromise</a>
                         <a href="#awards">Accreditations</a>
                         <a href="#services">Services</a>
-                        <a href="#care">Care for You</a>
+                        <a href="#care">CareforYou</a>
                     </div>
                 </nav>
             </div>
@@ -241,4 +240,4 @@ function render_section($id, $title, $content) {
     </script>
 </body>
 </html>
-<?php include '../footer.php'; ?>
+<?php include 'footer.php'; ?>

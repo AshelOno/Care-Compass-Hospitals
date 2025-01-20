@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../db.php'; 
+include 'db.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize and validate inputs
@@ -361,7 +361,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="toggle-container">
             <div class="toggle">
-                <button type="button" class="btn btn-secondary" style="margin-left: 150px; margin-top: 200px;" onclick="location.href='../index.php'">Home</button>
+                <button type="button" class="btn btn-secondary" style="margin-left: 150px; margin-top: 200px;" onclick="location.href='index.php'">Home</button>
             </div>
         </div>
     </div>
