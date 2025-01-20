@@ -20,7 +20,10 @@ switch ($page) {
         break;
 
     default:
-        include __DIR__ . '/public/index.html';
+    include __DIR__ . '/src/views/layout/header.php'; 
+    include __DIR__ . '/public/index.html';
+    include __DIR__ . '/src/views/layout/footer.php'; 
+        
 }
 ?>
 
