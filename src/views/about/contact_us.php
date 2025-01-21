@@ -1,12 +1,19 @@
 <?php
-session_start();
-require_once __DIR__ . '/../helpers/autoloader.php';  // Autoload classes
-require_once __DIR__ . '/../views/layout/header.php';  // Include the global header
-include 'db.php';
+// Start session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Include the database connection configuration
+include_once(__DIR__ . '/../../config.php');
+
+// Create an instance of the Database class
+$database = new Database();
+$conn = $database->connect();
+
+// Check if $conn is set and is a valid object
+if (!$conn) {
+    die("Connection failed: Database connection not established.");
 }
 
 // Handle form submission
@@ -23,20 +30,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepare and bind the SQL query to prevent SQL injection
     $stmt = $conn->prepare("INSERT INTO contact_form (name, email, phone, address1, address2, city, country, message) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssss", $name, $email, $phone, $address1, $address2, $city, $country, $message);
+    $stmt->bindParam(1, $name);
+    $stmt->bindParam(2, $email);
+    $stmt->bindParam(3, $phone);
+    $stmt->bindParam(4, $address1);
+    $stmt->bindParam(5, $address2);
+    $stmt->bindParam(6, $city);
+    $stmt->bindParam(7, $country);
+    $stmt->bindParam(8, $message);
 
     // Execute the statement and check for success
     if ($stmt->execute()) {
         echo "Thank you for contacting us. We will get back to you shortly!";
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $stmt->errorInfo()[2];
     }
 
-    // Close the statement and connection
-    $stmt->close();
-    $conn->close();
+    // Close the statement
+    $stmt = null;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -243,4 +257,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
-<?php include 'footer.php'; ?>

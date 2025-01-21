@@ -1,5 +1,8 @@
 <?php
+// Ensure BASE_PATH is defined at the beginning of this file
+define('BASE_PATH', dirname(__DIR__) . '/');
 
+// Your Database connection class follows...
 class Database
 {
     private $host = 'localhost';
@@ -27,4 +30,3 @@ class Database
     }
 }
 ?>
-

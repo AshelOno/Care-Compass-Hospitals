@@ -158,14 +158,15 @@ body {
     <img src="public\images\healthcare.jpg" alt="Care Compass Hospitals Logo" class="logo"> 
     <h1>Care Compass Hospitals</h1>
     <nav>
-      <ul class="nav-list">    
+    <ul class="nav-list">
         <li><a href="index.php">Home</a></li>
         <li><a href="index.php?page=login">Login</a></li>
         <li><a href="index.php?page=appointment">Appointment</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="/about/create.php">About</a></li>
+        <li><a href="index.php?page=about">About</a></li>
+        <li><a href="index.php?page=contact-us">Contact</a></li> 
         <li><a href="index.php?page=process-payment">Payments</a></li>
-      </ul>
+    </ul>
     </nav>
   </div>
 </header>

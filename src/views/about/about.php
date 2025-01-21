@@ -1,8 +1,7 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/Care-Compass-Hospitals/src/config.php';  // Adjust this if necessary
+// Include the config.php file which defines BASE_PATH
+include_once(__DIR__ . '/../../config.php');  // Adjusted path to config.php
 
-// Include the header using BASE_PATH
-include BASE_PATH . 'views/layout/header.php';
 // Function to render sections dynamically
 function render_section($id, $title, $content) {
     echo "<section id='$id' class='section'>";
@@ -243,7 +242,3 @@ function render_section($id, $title, $content) {
     </script>
 </body>
 </html>
-<?php
-// Optionally include a footer file
-include BASE_PATH . 'views/layout/footer.php';
-?>

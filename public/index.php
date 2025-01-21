@@ -1,39 +1,48 @@
 <?php
-// Load the autoloader to handle class imports
-require_once '../src/helpers/autoloader.php';
-
-// Load utility helpers (if needed for session, validation, etc.)
-require_once '../src/helpers/session_helper.php';
-require_once '../src/helpers/validation_helper.php';
+// Include necessary helpers and autoloaders
+require_once(__DIR__ . '/../src/helpers/autoloader.php');
+require_once(__DIR__ . '/../src/helpers/session_helper.php');
+require_once(__DIR__ . '/../src/helpers/validation_helper.php');
 
 // Routing logic
-$page = $_GET['page'] ?? 'home';
+$page = $_GET['page'] ?? 'home'; // Default to 'home' if no page is specified
 
-// Include the global header
-include '../src/views/layout/header.php';
+// Check if the page should include header and footer
+$includeHeaderFooter = !in_array($page, ['login', 'appointment']); // Exclude 'login' and 'appointment'
 
-// Route handling
+// Include the global header if required
+if ($includeHeaderFooter) {
+    include_once(__DIR__ . '/../src/views/layout/header.php');
+}
+
+// Route handling based on the 'page' parameter
 switch ($page) {
     case 'login':
-        include '../src/views/users/login.php';
+        include_once(__DIR__ . '/../src/views/users/login.php');
         break;
 
-    case 'schedule-appointment':
-        include '../src/views/appointments/create.php';
+    case 'appointment':
+        include_once(__DIR__ . '/../src/views/appointments/create.php');
         break;
 
     case 'about':
-        include '../src/views/about/about.php';
+        include_once(__DIR__ . '/../src/views/about/about.php');
         break;
 
     case 'contact-us':
-        include '../src/views/about/contact_us.php';
+        include_once(__DIR__ . '/../src/views/about/contact_us.php');
+        break;
+
+    case 'process-payment':
+        include_once(__DIR__ . '/../src/views/payments/process_payment.php');
         break;
 
     default:
-        include '../src/views/about/about.php'; // Default to the about page
+        include_once(__DIR__ . '/../public/index.html'); // Default to the About page
         break;
 }
 
-// Include the global footer
-include '../src/views/layout/footer.php';
+// Include the global footer if required
+if ($includeHeaderFooter) {
+    include_once(__DIR__ . '/../src/views/layout/footer.php');
+}

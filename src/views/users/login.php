@@ -1,5 +1,11 @@
+<?php
+// Check if there's an error message (if any)
+$error_message = isset($error_message) ? $error_message : '';
+?>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +23,7 @@
             height: 100vh;
             font-family: 'Montserrat', sans-serif;
         }
+
         .container {
             background: white;
             padding: 30px;
@@ -24,17 +31,21 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             width: 400px;
         }
+
         .input-container {
             position: relative;
             margin-bottom: 20px;
         }
-        .input-container input {
+
+        .input-container input,
+        .input-container select {
             width: 100%;
             padding: 10px;
             padding-left: 40px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         .input-container .icon {
             position: absolute;
             top: 50%;
@@ -42,6 +53,7 @@
             transform: translateY(-50%);
             color: #888;
         }
+
         .btn-primary {
             background-color: #25cc95;
             color: white;
@@ -52,9 +64,11 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         .btn-primary:hover {
             background-color: #1eab7d;
         }
+
         .error-message {
             color: red;
             text-align: center;
@@ -62,10 +76,11 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h2 class="text-center">Login</h2>
-        <?php if (isset($error_message)) { echo '<p class="error-message">'.$error_message.'</p>'; } ?>
+        <?php if (!empty($error_message)) { echo '<p class="error-message">'.$error_message.'</p>'; } ?>
         <form method="POST" action="login.php">
             <div class="input-container">
                 <input type="text" name="username" placeholder="Username" required>
@@ -85,41 +100,8 @@
             </div>
             <button type="submit" class="btn-primary">Login</button>
         </form>
+        <p class="text-center">Don't have an account? <a href="index.php?page=register">Register here</a></p>
     </div>
-</body>
-</html>
-
-<body>
-    <main>
-        <section class="login-section">
-            <h1>Login to Your Account</h1>
-
-            <!-- Check if there is any error message -->
-            <?php if (isset($error_message)) : ?>
-                <div class="error-message">
-                    <p><?= $error_message; ?></p>
-                </div>
-            <?php endif; ?>
-
-            <form action="index.php?page=login" method="POST">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" name="login">Login</button>
-                </div>
-            </form>
-
-            <p>Don't have an account? <a href="index.php?page=register">Register here</a></p>
-        </section>
-    </main>
 </body>
 
 </html>
