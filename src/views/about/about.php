@@ -1,5 +1,8 @@
 <?php
-include 'header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/Care-Compass-Hospitals/src/config.php';  // Adjust this if necessary
+
+// Include the header using BASE_PATH
+include BASE_PATH . 'views/layout/header.php';
 // Function to render sections dynamically
 function render_section($id, $title, $content) {
     echo "<section id='$id' class='section'>";
@@ -46,7 +49,7 @@ function render_section($id, $title, $content) {
         .hero1 {
             padding: 50px 20px;
             color: white;
-            background: url('uploads/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
+            background: url('/public/images/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
             text-align: center;
             position: relative;
         }
@@ -140,8 +143,8 @@ function render_section($id, $title, $content) {
 
         @media (max-width: 768px) {
             .navbar-menu {
-                display: none; /* Hidden by default */
-                flex-direction: column; /* Stacks items vertically */
+                display: none; 
+                flex-direction: column; 
                 gap: 10px;
                 background-color: #63cc7d;
                 padding: 10px;
@@ -240,4 +243,7 @@ function render_section($id, $title, $content) {
     </script>
 </body>
 </html>
-<?php include 'footer.php'; ?>
+<?php
+// Optionally include a footer file
+include BASE_PATH . 'views/layout/footer.php';
+?>

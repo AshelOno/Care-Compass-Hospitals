@@ -80,19 +80,26 @@ body {
 
 /* Services Section */
 .services-section {
-    background-color: #f9f9f9; /* Light gray background for a clean look */
-    padding: 10px 20px; /* Added padding for better spacing around the section */
+    background-color: #f9f9f9; 
+    padding: 20px; 
+    padding-bottom: 40px;
   }
   
   
   .services-section h3 {
     text-align: center;
-    font-size: 2rem; /* Slightly increased font size for better emphasis */
-    margin-top: 40px;
+    font-size: 2rem; 
+    margin-top: 20px;
     color: #333;
-    text-transform: uppercase; /* Uppercase for a bold heading style */
-    letter-spacing: 1.5px; /* Slightly increased spacing for a polished look */
+    text-transform: uppercase; 
+    letter-spacing: 1.5px; 
   }
+
+  .services-section p {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+}
   
   /* Services Grid */
   .services-grid {
@@ -104,31 +111,31 @@ body {
   
   /* Service Cards */
   .service-card {
-    background-color: #fff; /* White background for the cards */
-    padding: 25px; /* Increased padding for more content spacing */
-    border-radius: 12px; /* Slightly rounded corners for a modern look */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Slightly darker shadow for depth */
+    background-color: #fff; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); 
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .service-card h4 {
-    font-size: 1.3rem; /* Slightly larger font size for better visibility */
+    font-size: 1.3rem; 
     margin-bottom: 15px;
-    color: #367589; /* Complementary color for headings */
-    font-weight: 600; /* Bold weight for emphasis */
+    color: #004080; 
+    font-weight: 600;
   }
   
   .service-card p {
-    font-size: 1rem; /* Slightly larger font size for readability */
+    font-size: 1rem; 
     color: #666;
-    line-height: 1.6; /* Improved line height for better readability */
+    line-height: 1.6; 
   }
   
   .service-card:hover {
-    transform: translateY(-10px); /* Slightly increased hover effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover state */
-    background-color: #f0f9fc; /* Subtle background change on hover */
+    transform: translateY(-10px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    background-color: #f0f9fc; 
   }
   
   
@@ -167,7 +174,9 @@ body {
 /* Main Content Styles */
 main {
     padding: 20px;
-    background-color: whitesmoke;
+    background: linear-gradient(135deg,#077294  , #25cc95 50%, #077294 50%);
+    padding-bottom: 40px;
+
 }
 
 main .welcome {
@@ -181,10 +190,7 @@ main .welcome h1 {
     color: #004080;
 }
 
-main .welcome p {
-    font-size: 1.2em;
-    color: #555;
-}
+
 
 main .features {
     display: flex;

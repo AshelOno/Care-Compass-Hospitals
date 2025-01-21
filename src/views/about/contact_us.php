@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'header.php';
+require_once __DIR__ . '/../helpers/autoloader.php';  // Autoload classes
+require_once __DIR__ . '/../views/layout/header.php';  // Include the global header
 include 'db.php';
 
 // Check connection

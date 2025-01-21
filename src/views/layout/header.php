@@ -64,7 +64,7 @@ body {
     display: flex;
     align-items: center;
     background-color: #fff;
-    color: #00667c;
+    color: #004080;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -98,7 +98,7 @@ body {
   }
   
   .nav-list a {
-    color: #00667c;
+    color: #004080;
     text-decoration: none;
     font-weight: 500;
     text-transform: uppercase;
@@ -155,16 +155,15 @@ body {
 <!-- Header -->
 <header class="header">
   <div class="container">
-    <img src="uploads/healthcare.jpg" alt="Care Compass Hospitals Logo" class="logo"> 
+    <img src="public\images\healthcare.jpg" alt="Care Compass Hospitals Logo" class="logo"> 
     <h1>Care Compass Hospitals</h1>
     <nav>
       <ul class="nav-list">    
         <li><a href="index.php">Home</a></li>
         <li><a href="index.php?page=login">Login</a></li>
-        <li><a href="index.php?page=register">Register</a></li>
         <li><a href="index.php?page=appointment">Appointment</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="about.php">About</a></li>
+        <li><a href="/about/create.php">About</a></li>
         <li><a href="index.php?page=process-payment">Payments</a></li>
       </ul>
     </nav>
