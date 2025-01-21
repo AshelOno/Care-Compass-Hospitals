@@ -61,9 +61,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         /* General Styling */
         body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
         }
 
         /* Contact Us Section */
@@ -209,12 +212,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="contact-header">
             <h1>CONTACT US</h1>
             <p>We are committed to improving our service and scaling new heights each year.<br>We welcome your valuable
-                advice and feedback to serve you<br> better.</p>
+                advice and feedback to serve you better.</p>
         </div>
     </section>
 
-    <!-- Contact Details Section -->
-    <section class="contact-details">
+    <!-- Contact Form Section -->
+    <section class="contact-form">
+        <h2>Contact Care Compass Hospitals</h2>
+        <p>Please complete the form below, so we can provide quick and efficient service.</p>
+        <form action="contact_us.php" method="POST">
+            <input type="text" id="name" name="name" placeholder="Full Name (required)" required aria-label="Full Name">
+            <input type="email" id="email" name="email" placeholder="Email (required)" required aria-label="Email">
+            <input type="tel" id="phone" name="phone" placeholder="Phone" aria-label="Phone">
+            <input type="text" id="address1" name="address1" placeholder="Address Line 1" aria-label="Address Line 1">
+            <input type="text" id="address2" name="address2" placeholder="Address Line 2" aria-label="Address Line 2">
+            <input type="text" id="city" name="city" placeholder="City" aria-label="City">
+            <input type="text" id="country" name="country" placeholder="Country" aria-label="Country">
+            <textarea id="message" name="message" rows="5" placeholder="Message (required)" required aria-label="Message"></textarea>
+            <button type="submit">SEND</button>
+        </form>
+    </section>
+
+        <!-- Contact Details Section -->
+        <section class="contact-details">
         <div class="location">
             <h2>CARE COMPASS HOSPITAL</h2>
             <p><strong>KANDY</strong></p>
@@ -236,23 +256,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>0117 888 888</p>
             <p>info@carecompasshospitals.com</p>
         </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="contact-form">
-        <h2>Contact Care Compass Hospitals</h2>
-        <p>Please complete the form below, so we can provide quick and efficient service.</p>
-        <form action="contact_us.php" method="POST">
-            <input type="text" id="name" name="name" placeholder="Full Name (required)" required aria-label="Full Name">
-            <input type="email" id="email" name="email" placeholder="Email (required)" required aria-label="Email">
-            <input type="tel" id="phone" name="phone" placeholder="Phone" aria-label="Phone">
-            <input type="text" id="address1" name="address1" placeholder="Address Line 1" aria-label="Address Line 1">
-            <input type="text" id="address2" name="address2" placeholder="Address Line 2" aria-label="Address Line 2">
-            <input type="text" id="city" name="city" placeholder="City" aria-label="City">
-            <input type="text" id="country" name="country" placeholder="Country" aria-label="Country">
-            <textarea id="message" name="message" rows="5" placeholder="Message (required)" required aria-label="Message"></textarea>
-            <button type="submit">SEND</button>
-        </form>
     </section>
 
 </body>
