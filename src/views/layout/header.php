@@ -155,7 +155,7 @@ body {
 <!-- Header -->
 <header class="header">
   <div class="container">
-    <img src="public\images\healthcare.jpg" alt="Care Compass Hospitals Logo" class="logo"> 
+    <img src="../public/images/healthcare.jpg" alt="Care Compass Hospitals Logo" class="logo"> 
     <h1>Care Compass Hospitals</h1>
     <nav>
     <ul class="nav-list">

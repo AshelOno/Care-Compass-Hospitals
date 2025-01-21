@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
-    background-image: url('../images/index_bg.jpg');
+    background-image: url('./images/index_bg.jpg');
     color: #333;
     background-size: cover;
     background-position: center;
@@ -13,7 +13,6 @@ body {
 /* Welcome Section */
 .welcome-section {
     display: flex;
- /* Add your image path here */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -77,14 +76,12 @@ body {
     transform: translateY(-3px);
 }
 
-
 /* Services Section */
 .services-section {
     background-color: #f9f9f9; 
     padding: 20px; 
     padding-bottom: 40px;
   }
-  
   
   .services-section h3 {
     text-align: center;
@@ -137,9 +134,6 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
     background-color: #f0f9fc; 
   }
-  
-  
-
 
   /* Responsive Design */
   @media (max-width: 768px) {  
@@ -170,7 +164,6 @@ body {
     }
 }
 
-
 /* Main Content Styles */
 main {
     padding: 20px;
@@ -189,8 +182,6 @@ main .welcome h1 {
     margin-bottom: 10px;
     color: #004080;
 }
-
-
 
 main .features {
     display: flex;

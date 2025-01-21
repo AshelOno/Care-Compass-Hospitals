@@ -138,7 +138,7 @@
     <div class="container">
         <header>
             <!-- Logo Section -->
-            <img src="public/images/healthcare.jpg" alt="Care Compass Hospitals Logo" class="logo"> 
+            <img src="../public/images/healthcare.jpg" alt="Care Compass Hospitals Logo" class="logo"> 
             <h1>Care Compass Hospitals</h1>
         </header>
 

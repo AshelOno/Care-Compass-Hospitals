@@ -8,7 +8,7 @@ require_once(__DIR__ . '/../src/helpers/validation_helper.php');
 $page = $_GET['page'] ?? 'home'; // Default to 'home' if no page is specified
 
 // Check if the page should include header and footer
-$includeHeaderFooter = !in_array($page, ['login', 'appointment']); // Exclude 'login' and 'appointment'
+$includeHeaderFooter = !in_array($page, ['login', 'appointment','process-payment']); // Exclude 'login' and 'appointment'
 
 // Include the global header if required
 if ($includeHeaderFooter) {

@@ -48,7 +48,7 @@ function render_section($id, $title, $content) {
         .hero1 {
             padding: 50px 20px;
             color: white;
-            background: url('/public/images/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
+            background: url('../public/images/vintage-dial-telephone-handset_1.jpg') no-repeat center center / cover;
             text-align: center;
             position: relative;
         }
