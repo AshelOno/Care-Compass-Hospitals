@@ -1,12 +1,11 @@
 <?php
-// Ensure BASE_PATH is defined at the beginning of this file
+// Define the base path of the project for easy path management
 define('BASE_PATH', dirname(__DIR__) . '/');
 
-// Your Database connection class follows...
 class Database
 {
     private $host = 'localhost';
-    private $db_name = 'care_compass_hospitals';
+    private $db_name = 'care_compass';
     private $username = 'root';
     private $password = '';
     private $conn;
@@ -29,4 +28,5 @@ class Database
         return $this->conn;
     }
 }
-?>
+
+

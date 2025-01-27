@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Care Compass Hospitals</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css"> <!-- Correct path to CSS -->
 </head>
 
 <body>
@@ -17,8 +17,8 @@
             Join us in making a difference with <span class="tagline-highlight">passion and excellence</span>.
         </p>
         <div class="cta-buttons">
-            <a href="src/views/about/about.php" class="btn-primary">Learn More</a>
-            <a href="src/views/about/contact_us.php" class="btn-secondary">Contact Us</a>
+            <a href="?page=about" class="btn-primary">Learn More</a> <!-- Link adjusted for routing -->
+            <a href="?page=contact-us" class="btn-secondary">Contact Us</a> <!-- Link adjusted for routing -->
         </div>
     </header>
 

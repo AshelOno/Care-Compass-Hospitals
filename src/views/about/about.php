@@ -221,7 +221,7 @@ function render_section($id, $title, $content) {
         </section>
 
     </header>
-
+ 
     <!-- Main Content -->
     <main>
         <?php
