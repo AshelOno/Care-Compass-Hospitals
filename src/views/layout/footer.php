@@ -1,21 +1,31 @@
+<?php
+
+// Generate CSRF token if it doesn't exist
+if (!isset($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); // Generate a new CSRF token
+}
+?>
 
 <!-- Subscription Section -->
 <section class="subscription-section">
     <h2>Stay Updated with Our Latest News & Offers</h2>
     <p>Subscribe to receive exclusive promotions, health tips, and updates from Care Compass Hospitals.</p>
+    
     <?php
     // Display alert if there is a message
-    if (!empty($_SESSION['message'])) {
+    if (isset($_SESSION['message']) && !empty($_SESSION['message'])) {
         echo "<script>alert('" . htmlspecialchars($_SESSION['message'], ENT_QUOTES, 'UTF-8') . "');</script>";
         unset($_SESSION['message']); // Clear message after displaying
     }
     ?>
+    
     <form action="index.php" method="POST" class="subscription-form">
         <input type="email" name="email" placeholder="Enter your email address" required>
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
         <button type="submit">Subscribe</button>
     </form>
 </section>
+
 
 <!-- Footer -->
 <footer class="footer">
