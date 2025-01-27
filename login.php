@@ -56,7 +56,138 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Care Compass</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Improved CSS */
+        body {
+            background: linear-gradient(to right, #25cc95, #077294);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            color: #fff;
+            box-sizing: border-box;
+        }
 
+        .container {
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 420px;
+            animation: fadeIn 1s ease-in-out;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .home-btn {
+            background-color: #ffcc00;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .home-btn:hover {
+            background-color: #ffa500;
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-container input {
+            width: 85%;
+            padding: 12px 25px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 14px;
+            background: #f9f9f9;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .input-container input:focus {
+            outline: none;
+            border-color: #25cc95;
+            box-shadow: 0 0 5px rgba(37, 204, 149, 0.8);
+            background: #ffffff;
+        }
+
+        .btn-primary {
+            background-color: #25cc95;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #1eab7d;
+            transform: translateY(-2px);
+        }
+
+        .error-message {
+            background-color: #ffdddd;
+            color: #d8000c;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        p a {
+            color: #25cc95;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        p a:hover {
+            color: #1eab7d;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -65,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <?php if (isset($error_message)) { echo "<p class='error-message'>$error_message</p>"; } ?>
 
-        <form action="login.php" method="POST">
+        <form action="login.php" method="POST" onsubmit="return validateForm()">
             <div class="input-container">
                 <input type="text" name="username" placeholder="Username" required>
             </div>
@@ -78,191 +209,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
 
         <p>
-            Don't have an account? <a href="register.php">Register here</a>
+            Don't have an account? <a href="registration.php">Register here</a>
         </p>
     </div>
+    <script>
+        function validateForm() {
+            const username = document.querySelector('input[name="username"]').value.trim();
+            const password = document.querySelector('input[name="password"]').value;
+
+            if (!username || !password) {
+                alert("Both fields are required.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
-
-<style>
-    body {
-    background: linear-gradient(to right, #25cc95, #077294);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    color: #fff;
-    box-sizing: border-box;
-}
-
-.container {
-    background: #ffffff;
-    padding: 30px 25px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    width: 100%;
-    max-width: 420px;
-    animation: fadeIn 1s ease-in-out;
-    box-sizing: border-box;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.home-btn {
-    background-color: #ffcc00;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 16px;
-    display: inline-block;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.home-btn:hover {
-    background-color: #ffa500;
-    transform: translateY(-2px);
-}
-
-h2 {
-    text-align: center;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 25px;
-    font-size: 24px;
-}
-
-.input-container {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.input-container input,
-.input-container select {
-    width: 100%;
-    padding: 12px 0px;
-    padding-left: 0px;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    font-size: 14px;
-    background: #f9f9f9;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #333;
-    transition: all 0.3s ease;
-}
-
-.input-container input:focus,
-.input-container select:focus {
-    outline: none;
-    border-color: #25cc95;
-    box-shadow: 0 0 5px rgba(37, 204, 149, 0.8);
-    background: #ffffff;
-}
-
-.input-container .icon {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    color: #888;
-    font-size: 18px;
-}
-
-.btn-primary {
-    background-color: #25cc95;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #1eab7d;
-    transform: translateY(-2px);
-}
-
-.btn-primary:active {
-    transform: translateY(0);
-}
-
-.error-message {
-    background-color: #ffdddd;
-    color: #d8000c;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-
-p {
-    text-align: center;
-    font-size: 14px;
-    color: #666;
-    margin-top: 20px;
-}
-
-p a {
-    color: #25cc95;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-p a:hover {
-    color: #1eab7d;
-}
-
-@media (max-width: 576px) {
-    .container {
-        padding: 20px;
-        width: 90%;
-    }
-
-    .home-btn {
-        font-size: 14px;
-        padding: 10px 15px;
-    }
-
-    .btn-primary {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .input-container input,
-    .input-container select {
-        padding-left: 45px;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        max-width: 90%;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-}
-
-</style>

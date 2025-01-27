@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
-// Define the base path of the project for easy path management
-=======
->>>>>>> 2b91b1af9c357ceaa6329ea7000324a4bd986524
+
 define('BASE_PATH', dirname(__DIR__) . '/');
 
 class Database
