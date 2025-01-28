@@ -12,7 +12,7 @@ start_session();
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 // List of pages that do not require header and footer
-$excludeHeaderFooter = ['login', 'appointment', 'process-payment'];
+$excludeHeaderFooter = ['login', 'appointment'];
 
 // Check if the page should include header and footer
 $includeHeaderFooter = !in_array($page, $excludeHeaderFooter);

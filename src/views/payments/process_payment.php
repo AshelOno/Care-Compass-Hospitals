@@ -5,37 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Payment</title>
     <style>
-        /* General reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body styling */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #333;
-        }
-
         /* Form container */
-        .container {
-            background: #ffffff;
-            padding: 20px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 450px;
+        .container-form {
+            background: white;
+            color: black;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 50px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
 
         /* Form heading */
-        h1 {
+        .container-form h1 {
             margin-bottom: 20px;
             font-size: 24px;
             color: #004080;
@@ -47,7 +30,7 @@
             text-align: left;
         }
 
-        label {
+        .form-group label {
             font-size: 14px;
             font-weight: bold;
             display: block;
@@ -55,8 +38,8 @@
             color: #077294;
         }
 
-        input,
-        select {
+        .form-group input,
+        .form-group select {
             width: 100%;
             padding: 10px;
             font-size: 16px;
@@ -66,8 +49,8 @@
             transition: border-color 0.3s ease;
         }
 
-        input:focus,
-        select:focus {
+        .form-group input:focus,
+        .form-group select:focus {
             border-color: #25cc95;
         }
 
@@ -105,12 +88,12 @@
                 padding: 15px;
             }
 
-            h1 {
+            .container h1 {
                 font-size: 20px;
             }
 
-            input,
-            select {
+            .form-group input,
+            .form-group select {
                 font-size: 14px;
             }
 
@@ -118,40 +101,38 @@
                 font-size: 14px;
             }
         }
-
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-form">
         <h1>Make a Payment</h1>
         <form action="../../controllers/PaymentController.php" method="POST">
             <div class="form-group">
                 <label for="payment_id">Payment ID:</label>
-                <input type="text" name="payment_id" id="payment_id" placeholder="Enter Payment ID" required>
+                <input type="text" name="payment_id" id="payment_id" placeholder="Enter Payment ID" required aria-label="Payment ID">
             </div>
             <div class="form-group">
                 <label for="patient_id">Patient ID:</label>
-                <input type="number" name="patient_id" id="patient_id" placeholder="Enter Patient ID" required>
+                <input type="number" name="patient_id" id="patient_id" placeholder="Enter Patient ID" required aria-label="Patient ID">
             </div>
             <div class="form-group">
                 <label for="appointment_id">Appointment ID:</label>
-                <input type="number" name="appointment_id" id="appointment_id" placeholder="Enter Appointment ID" required>
+                <input type="number" name="appointment_id" id="appointment_id" placeholder="Enter Appointment ID" required aria-label="Appointment ID">
             </div>
             <div class="form-group">
                 <label for="amount_paid">Amount Paid:</label>
-                <input type="number" name="amount_paid" id="amount_paid" step="0.01" placeholder="Enter Amount Paid" required>
+                <input type="number" name="amount_paid" id="amount_paid" step="0.01" placeholder="Enter Amount Paid" required aria-label="Amount Paid">
             </div>
             <div class="form-group">
                 <label for="payment_date">Payment Date:</label>
-                <input type="date" name="payment_date" id="payment_date" required>
+                <input type="date" name="payment_date" id="payment_date" required aria-label="Payment Date">
             </div>
             <div class="form-group">
                 <label for="payment_method">Payment Method:</label>
-                <!-- Image above payment method -->
                 <div class="image-container">
                     <img src="../public/images/card.png" alt="Payment Methods">
                 </div>
-                <select name="payment_method" id="payment_method" required>
+                <select name="payment_method" id="payment_method" required aria-label="Payment Method">
                     <option value="" disabled selected>Select Payment Method</option>
                     <option value="Credit Card">Credit Card</option>
                     <option value="Bank Transfer">Bank Transfer</option>
@@ -163,3 +144,4 @@
     </div>
 </body>
 </html>
+

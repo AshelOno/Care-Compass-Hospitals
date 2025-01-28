@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Contact Us</title>
     <style>
         /* General Styling */
-        body {
+        .contact body {
             font-family: 'Roboto', Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
@@ -104,7 +104,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             max-width: 800px;
             margin: 0 auto;
         }
-
 
         /* Contact Details Section */
         .contact-details {
@@ -207,6 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <div class="contact">
     <!-- Contact Us Header Section -->
     <section class="contact-us">
         <div class="contact-header">
@@ -257,7 +257,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>info@carecompasshospitals.com</p>
         </div>
     </section>
-
+    </div>
 </body>
 </html>
 
