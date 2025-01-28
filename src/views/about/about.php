@@ -30,11 +30,11 @@ function render_section($id, $title, $content) {
             background-color: #f9f9f9;
         }
 
-        h1, h2 {
+        .about h1, h2 {
             margin: 0;
         }
 
-        a {
+        .about a {
             text-decoration: none;
             color: inherit;
             transition: color 0.3s ease-in-out;
@@ -189,61 +189,62 @@ function render_section($id, $title, $content) {
     </style>
 </head>
 <body>
-
-    <!-- Header Section -->
-    <section class="hero1">
-        <div class="hero1-content">
-            <h1>About Care Compass Hospitals</h1>
-            <p>At Hemas Hospitals, we strive to offer you international standard care assured with safety, best clinical outcomes, and customer experience.</p>
-        </div>
-    </section>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <section>
-            <h1>ABOUT</h1>
-        </section>
-        <section>
-            <div class="nav">
-                <nav>
-                    <span class="navbar-toggle" onclick="toggleNavbar()">☰</span>
-                    <div class="navbar-menu">
-                        <a href="#about">AboutUs</a>
-                        <a href="#vision-mission">Vision&Mission</a>
-                        <a href="#promise">OurPromise</a>
-                        <a href="#awards">Accreditations</a>
-                        <a href="#services">Services</a>
-                        <a href="#care">CareforYou</a>
-                    </div>
-                </nav>
+    <div class="about">
+        <!-- Header Section -->
+        <section class="hero1">
+            <div class="hero1-content">
+                <h1>About Care Compass Hospitals</h1>
+                <p>At Hemas Hospitals, we strive to offer you international standard care assured with safety, best clinical outcomes, and customer experience.</p>
             </div>
-
         </section>
 
-    </header>
- 
-    <!-- Main Content -->
-    <main>
-        <?php
-        render_section('about', 'About Care Compass Hospitals', 'Welcome to Care Compass Hospitals. Our internationally accredited facilities ensure patient safety with highly specialized medical care, including tertiary and super-specialty services.');
-        render_section('vision-mission', 'Vision & Mission', 'Our vision and mission revolve around providing superior healthcare services and ensuring patient safety while adhering to international standards.We win by serving the Sri Lankan community,
-         delivering seamless end-to-end healthcare solutions which are affordable & easily accessible, with best clinical outcomes and superior customer experience. We do this by adopting best global practices, highest international & Sri Lankan standards, innovative digital & tech solutions, productivity & efficiency improvement tools together with strategic investments & continuous talent development.');
-        render_section('promise', 'Our Promise', ' We are a chain of multi-specialty hospitals offering tertiary and super specialty care in compliance with international standards ensuring highest levels of patient safety and superior clinical outcomes.
+        <!-- Hero Section -->
+        <header class="hero">
+            <section>
+                <h1>ABOUT</h1>
+            </section>
+            <section>
+                <div class="nav">
+                    <nav>
+                        <span class="navbar-toggle" onclick="toggleNavbar()">☰</span>
+                        <div class="navbar-menu">
+                            <a href="#about">AboutUs</a>
+                            <a href="#vision-mission">Vision&Mission</a>
+                            <a href="#promise">OurPromise</a>
+                            <a href="#awards">Accreditations</a>
+                            <a href="#services">Services</a>
+                            <a href="#care">CareforYou</a>
+                        </div>
+                    </nav>
+                </div>
 
-We use innovation to continuously improve productivity, efficiency, clinical care and customer satisfaction. We place customer at the centre of all we do and and strive to improve customer experience.');
-        render_section('awards', 'Accreditations & Awards', ' We understand that internationally and locally accepted standards can definitely improve the safety and clinical outcomes of our patients. Mindful of this,
-         we’ve obtained a number of accreditations from global and local bodies. We are the only Sri Lankan hospital to have obtained the coveted ACHSI – Australian Council for Healthcare Standards International Accreditation for the third consecutive term. You are guaranteed superior safety standards at Hemas Hospitals as we have put in place systems, process and technology in line with ACHSI guidelines as well as locally benchmarked guidelines.');
-        render_section('services', 'Our Services', ' We take care of your preventive and curative healthcare requirements at our state-of-the-art facilities. Collectively, our hospitals can accommodate 190 in-house patients where you can be rest assured of receiving care on par with international standards. Our island wide laboratory services network is well-equipped with the cutting-edge technology, 
-        equipment and skilled professionals to provide accurate diagnostic investigations. We’ve purposely built our hospitals to align with international standards and equipped each area with the latest technological advancements. You can visit our Accident and Emergency units any time during the day and night to receive medical or surgical emergency care.');
-        render_section('care', 'We Take Care of You', 'Our ultra-clean environments, experienced healthcare professionals, and well-designed rooms ensure comfort and expedited recovery for you and your loved ones.');
-        ?>
-    </main>
+            </section>
 
-    <script>
-        function toggleNavbar() {
-            const navbarMenu = document.querySelector('.navbar-menu');
-            navbarMenu.classList.toggle('active');
-        }
-    </script>
+        </header>
+    
+        <!-- Main Content -->
+        <main>
+            <?php
+            render_section('about', 'About Care Compass Hospitals', 'Welcome to Care Compass Hospitals. Our internationally accredited facilities ensure patient safety with highly specialized medical care, including tertiary and super-specialty services.');
+            render_section('vision-mission', 'Vision & Mission', 'Our vision and mission revolve around providing superior healthcare services and ensuring patient safety while adhering to international standards.We win by serving the Sri Lankan community,
+            delivering seamless end-to-end healthcare solutions which are affordable & easily accessible, with best clinical outcomes and superior customer experience. We do this by adopting best global practices, highest international & Sri Lankan standards, innovative digital & tech solutions, productivity & efficiency improvement tools together with strategic investments & continuous talent development.');
+            render_section('promise', 'Our Promise', ' We are a chain of multi-specialty hospitals offering tertiary and super specialty care in compliance with international standards ensuring highest levels of patient safety and superior clinical outcomes.
+
+            We use innovation to continuously improve productivity, efficiency, clinical care and customer satisfaction. We place customer at the centre of all we do and and strive to improve customer experience.');
+            render_section('awards', 'Accreditations & Awards', ' We understand that internationally and locally accepted standards can definitely improve the safety and clinical outcomes of our patients. Mindful of this,
+            we’ve obtained a number of accreditations from global and local bodies. We are the only Sri Lankan hospital to have obtained the coveted ACHSI – Australian Council for Healthcare Standards International Accreditation for the third consecutive term. You are guaranteed superior safety standards at Hemas Hospitals as we have put in place systems, process and technology in line with ACHSI guidelines as well as locally benchmarked guidelines.');
+            render_section('services', 'Our Services', ' We take care of your preventive and curative healthcare requirements at our state-of-the-art facilities. Collectively, our hospitals can accommodate 190 in-house patients where you can be rest assured of receiving care on par with international standards. Our island wide laboratory services network is well-equipped with the cutting-edge technology, 
+            equipment and skilled professionals to provide accurate diagnostic investigations. We’ve purposely built our hospitals to align with international standards and equipped each area with the latest technological advancements. You can visit our Accident and Emergency units any time during the day and night to receive medical or surgical emergency care.');
+            render_section('care', 'We Take Care of You', 'Our ultra-clean environments, experienced healthcare professionals, and well-designed rooms ensure comfort and expedited recovery for you and your loved ones.');
+            ?>
+        </main>
+
+        <script>
+            function toggleNavbar() {
+                const navbarMenu = document.querySelector('.navbar-menu');
+                navbarMenu.classList.toggle('active');
+            }
+        </script>
+    </div>
 </body>
 </html>
