@@ -22,10 +22,9 @@ if (!isset($_SESSION['csrf_token'])) {
     <form action="index.php" method="POST" class="subscription-form">
         <input type="email" name="email" placeholder="Enter your email address" required>
         <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-        <button type="submit">Subscribe</button>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
     </form>
 </section>
-
 
 <!-- Footer -->
 <footer class="footer">
@@ -52,13 +51,13 @@ if (!isset($_SESSION['csrf_token'])) {
       </div>
       <div class="footer-contact">
         <h4>Contact Us</h4>
-        <p>389, Pannapitiya Road, Colombo.</p>
-        <p>0117 888 888</p>
-        <p><a href="mailto:info@carecompasshospitals.com">info@carecompasshospitals.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> 389, Pannapitiya Road, Colombo.</p>
+        <p><i class="fas fa-phone"></i> 0117 888 888</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:info@carecompasshospitals.com">info@carecompasshospitals.com</a></p>
         <div class="social-links">
-          <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
-          <a href="#">Instagram</a>
+          <a href="#" class="fab fa-facebook"></a>
+          <a href="#" class="fab fa-twitter"></a>
+          <a href="#" class="fab fa-instagram"></a>
         </div>
       </div>
     </div>
@@ -75,6 +74,9 @@ if (!isset($_SESSION['csrf_token'])) {
     </div>
   </div>
 </footer>
+
+<!-- Include Font Awesome for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 <style>
   /* Subscription Section */
@@ -136,6 +138,19 @@ if (!isset($_SESSION['csrf_token'])) {
   /* Subscribe Button */
   .subscription-form button {
     padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .subscription-form button i {
+    font-size: 1.2rem;
   }
 
   /* Footer */
@@ -204,7 +219,7 @@ if (!isset($_SESSION['csrf_token'])) {
   .social-links a {
     color: #fff;
     margin-right: 15px;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .social-links a:hover {
