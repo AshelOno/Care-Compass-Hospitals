@@ -160,7 +160,7 @@ body {
     <nav>
     <ul class="nav-list">
         <li><a href="index.php">Home</a></li>
-        <li><a href="/Care-Compass-Hospitals/login.php">Login</a></li>
+        <li><a href="login.php">Login</a></li>
         <li><a href="index.php?page=appointment">Appointment</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="index.php?page=about">About</a></li>

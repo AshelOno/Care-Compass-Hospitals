@@ -1,0 +1,237 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/public/images/hospital.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Adds a darker overlay for better contrast */
+    z-index: -1;
+}
+
+/* Typography */
+.home h1, h2, h3 {
+    color: #004080;
+    text-align: center;
+    margin: 0;
+}
+
+.home p {
+    color: #eee;
+    line-height: 1.8;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Welcome Section */
+.welcome-section {
+    background: linear-gradient(135deg, #25cc95, #0493a3);
+    color: white;
+    padding: 70px 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1100px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-section h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.welcome-section .tagline-highlight {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.cta-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cta-buttons a {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ffd700;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #e6b800;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary {
+    background-color: #0493a3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+    background-color: #036f81;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Services Section */
+.services-section {
+    padding: 80px 20px;
+    background: #f4faff; /* Soft blue background for a healthcare theme */
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+.services-section p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.service-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 350px;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #0493a3;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 20px;
+    background: url('public/images/medical-health-blue-green-cross.jpg') no-repeat center center/cover;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.features-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay for contrast */
+    z-index: 0;
+}
+
+.features-section h2 {
+    position: relative;
+    font-size: 2.5rem;
+    color: #ffcc00;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.features-section p {
+    position: relative;
+    font-size: 1.2rem;
+    color: #e6e6e6;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+    justify-items: center;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 350px;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.8rem;
+    color: #0493a3;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
