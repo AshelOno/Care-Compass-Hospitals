@@ -4,7 +4,6 @@ spl_autoload_register(function ($className) {
 
     // Define the directories to search for classes
     $directories = [
-        'models/',
         'controllers/',
         'services/',
     ];

@@ -43,7 +43,7 @@ switch ($page) {
         break;
 
     default:
-        include_once(__DIR__ . '/src/views/home.php'); // Default to home page
+        include_once(__DIR__ . '/home.php'); // Default to home page
         break;
 }
 

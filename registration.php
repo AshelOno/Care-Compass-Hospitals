@@ -1,12 +1,19 @@
 <?php
+session_start();
+include 'src/config.php'; // This file should define the Database class and return a PDO connection
+
+// Initialize Database connection (PDO)
+$db = new Database();
+$conn = $db->connect();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Retrieve form data
-    $username = trim($_POST['username']);
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-    $confirm_password = trim($_POST['confirm_password']);
-    $role_id = $_POST['role_id'];
-    $phone = trim($_POST['phone']);
+    // Retrieve form data with sanitization
+    $username         = isset($_POST['username']) ? trim($_POST['username']) : '';
+    $email            = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $password         = isset($_POST['password']) ? trim($_POST['password']) : '';
+    $confirm_password = isset($_POST['confirm_password']) ? trim($_POST['confirm_password']) : '';
+    $role_id          = isset($_POST['role_id']) ? $_POST['role_id'] : '';
+    $phone            = isset($_POST['phone']) ? trim($_POST['phone']) : '';
 
     // Error handling
     $errors = [];
@@ -29,20 +36,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (strlen($password) < 8) {
         $errors[] = "Password must be at least 8 characters long.";
     }
-    if (empty($role_id)) {
-        $errors[] = "Please select a role.";
+    if (!in_array($role_id, ['1', '2', '3'])) {
+        $errors[] = "Please select a valid role.";
     }
 
-    // If no errors, process registration
-    if (empty($errors)) {
-        // Hash the password
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+    // Check if email already exists
+    $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = :email");
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0) {
+        $errors[] = "Email is already registered.";
+    }
+    $stmt->closeCursor();
 
-        // Simulated database connection and insertion logic
-        // Replace with real database code in production
-        echo "<p style='color: green;'>Registration successful! You can <a href='login.php'>login here</a>.</p>";
+    // If no errors, insert user into database using PDO
+    if (empty($errors)) {
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+        $current_time    = date('Y-m-d H:i:s'); // Fetch current date and time
+
+        $stmt = $conn->prepare("INSERT INTO users (username, email, phone, password, role_id, created_at) 
+                                VALUES (:username, :email, :phone, :password, :role_id, :created_at)");
+
+        $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+        $stmt->bindValue(':phone', $phone, PDO::PARAM_STR);
+        $stmt->bindValue(':password', $hashed_password, PDO::PARAM_STR);
+        $stmt->bindValue(':role_id', $role_id, PDO::PARAM_INT);
+        $stmt->bindValue(':created_at', $current_time, PDO::PARAM_STR);
+
+        if ($stmt->execute()) {
+            echo "<p style='color: green;'>Registration successful! You can <a href='login.php'>login here</a>.</p>";
+        } else {
+            $errorInfo = $stmt->errorInfo();
+            echo "<p style='color: red;'>Error: " . $errorInfo[2] . "</p>";
+        }
     }
 }
+
+// Close the connection by setting it to null
+$conn = null;
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +95,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             align-items: center;
             height: 100vh;
         }
-
         .container {
             width: 90%;
             max-width: 500px;
@@ -72,26 +103,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
         h2 {
             text-align: center;
             margin-bottom: 20px;
             font-size: 1.8rem;
         }
-
         form {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
-
         input, select, button {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1rem;
         }
-
         button {
             background-color: #4CAF50;
             color: white;
@@ -99,35 +126,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-weight: 600;
             transition: background-color 0.3s;
         }
-
         button:hover {
             background-color: #45a049;
         }
-
         .error {
             color: red;
             font-size: 0.9em;
             margin-bottom: 15px;
         }
-
         .info {
             font-size: 0.9em;
             color: #555;
             margin-top: -10px;
         }
-
         .login-link {
             text-align: center;
             margin-top: 15px;
             font-size: 0.9em;
         }
-
         .login-link a {
             color: #4CAF50;
             text-decoration: none;
             font-weight: bold;
         }
-
         .login-link a:hover {
             text-decoration: underline;
         }
@@ -157,9 +178,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="password" name="confirm_password" placeholder="Confirm Password">
             <select name="role_id">
                 <option value="">Select Role</option>
-                <option value="1" <?php echo isset($role_id) && $role_id == 1 ? 'selected' : ''; ?>>Admin</option>
-                <option value="2" <?php echo isset($role_id) && $role_id == 2 ? 'selected' : ''; ?>>Staff</option>
-                <option value="3" <?php echo isset($role_id) && $role_id == 3 ? 'selected' : ''; ?>>Patient</option>
+                <option value="1" <?php echo (isset($role_id) && $role_id == '1') ? 'selected' : ''; ?>>Admin</option>
+                <option value="2" <?php echo (isset($role_id) && $role_id == '2') ? 'selected' : ''; ?>>Staff</option>
+                <option value="3" <?php echo (isset($role_id) && $role_id == '3') ? 'selected' : ''; ?>>Patient</option>
             </select>
             <button type="submit">Register</button>
         </form>

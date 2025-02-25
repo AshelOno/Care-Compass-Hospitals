@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .contact-us {
             padding: 50px 20px;
             color: white;
-            background: url('../public/images/healthcare-people-group-professi.jpg') no-repeat center center / cover;
+            background: url('public/images/healthcare-people-group-professi.jpg') no-repeat center center / cover;
             text-align: center;
             position: relative;
         }
@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             gap: 10px;
             padding: 50px 20px;
             color: white;
-            background: url('../public/images/index_bg.jpg') no-repeat center bottom;
+            background: url('public/images/index_bg.jpg') no-repeat center bottom;
             background-size: cover;
             text-align: center;
         }

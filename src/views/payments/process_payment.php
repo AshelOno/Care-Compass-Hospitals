@@ -130,7 +130,7 @@
             <div class="form-group">
                 <label for="payment_method">Payment Method:</label>
                 <div class="image-container">
-                    <img src="../public/images/card.png" alt="Payment Methods">
+                    <img src="public/images/card.png" alt="Payment Methods">
                 </div>
                 <select name="payment_method" id="payment_method" required aria-label="Payment Method">
                     <option value="" disabled selected>Select Payment Method</option>

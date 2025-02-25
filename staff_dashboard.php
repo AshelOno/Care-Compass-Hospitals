@@ -36,7 +36,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 2) {
         }
         .dashboard-header h2 {
             font-size: 2rem;
-            color: #4CAF50;
+            color: #036f81;
         }
         .dashboard-header p {
             font-size: 1rem;
@@ -52,14 +52,14 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 2) {
         .nav-links a {
             text-decoration: none;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #036f81;
             color: white;
             border-radius: 5px;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .nav-links a:hover {
-            background-color: #45a049;
+            background-color: #025b69;
             transform: translateY(-2px);
         }
         .search-bar {
@@ -75,7 +75,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 2) {
         }
         .search-bar button {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #036f81;
             color: white;
             border: none;
             border-radius: 5px;
@@ -84,14 +84,14 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 2) {
             transition: background-color 0.3s ease;
         }
         .search-bar button:hover {
-            background-color: #45a049;
+            background-color: #025b69;
         }
         .notifications {
             margin-top: 20px;
         }
         .notifications h3 {
             font-size: 1.5rem;
-            color: #4CAF50;
+            color: #036f81;
             margin-bottom: 10px;
         }
         .notifications ul {

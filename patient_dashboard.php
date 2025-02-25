@@ -36,7 +36,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 3) {
         }
         .dashboard-header h2 {
             font-size: 2rem;
-            color: #4CAF50;
+            color: #003366;
         }
         .dashboard-header p {
             font-size: 1rem;
@@ -52,14 +52,14 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 3) {
         .nav-links a {
             text-decoration: none;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #003366;
             color: white;
             border-radius: 5px;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .nav-links a:hover {
-            background-color: #45a049;
+            background-color: #002244;
             transform: translateY(-2px);
         }
         .search-bar {
@@ -75,7 +75,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 3) {
         }
         .search-bar button {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #003366;
             color: white;
             border: none;
             border-radius: 5px;
@@ -84,14 +84,14 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 3) {
             transition: background-color 0.3s ease;
         }
         .search-bar button:hover {
-            background-color: #45a049;
+            background-color: #002244;
         }
         .notifications {
             margin-top: 20px;
         }
         .notifications h3 {
             font-size: 1.5rem;
-            color: #4CAF50;
+            color: #003366;
             margin-bottom: 10px;
         }
         .notifications ul {
@@ -112,13 +112,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role_id'] != 3) {
         .logout-btn a {
             text-decoration: none;
             padding: 10px 20px;
-            background-color: #f44336;
+            background-color: #cc0000;
             color: white;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
         .logout-btn a:hover {
-            background-color: #d32f2f;
+            background-color: #990000;
         }
         footer {
             text-align: center;

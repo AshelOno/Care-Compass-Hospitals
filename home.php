@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Care Compass Hospitals</title>
-    <link rel="stylesheet" href="../public/css/home.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
@@ -45,6 +45,10 @@
                 </div>
             </section>
 
+
+
+
+            
             <!-- Features Section -->
             <section class="features-section">
                 <h2>Why Choose Us?</h2>
