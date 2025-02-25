@@ -34,7 +34,7 @@ switch ($page) {
         break;
 
     case 'contact-us':
-        include_once(__DIR__ . '/../src/views/about/contact_us.php');
+        include_once(__DIR__ . '/contact_us.php'); // Adjusted for public folder
         break;
 
     case 'process-payment':

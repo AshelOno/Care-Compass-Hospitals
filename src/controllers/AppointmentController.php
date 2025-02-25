@@ -1,5 +1,20 @@
 <?php
-require_once __DIR__ . '/../config/database.php';
+// Start session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Include the database connection configuration
+include('src\config.php');
+
+// Create an instance of the Database class
+$database = new Database();
+$conn = $database->connect();
+
+// Check if $conn is set and is a valid object
+if (!$conn) {
+    die("Connection failed: Database connection not established.");
+}
 
 class AppointmentController {
     private $db;
@@ -25,14 +40,16 @@ class AppointmentController {
 
             // Validate the inputs
             if (empty($patientName) || empty($phone) || empty($email) || empty($doctor) || empty($specialization) || empty($hospital) || empty($appointmentDate) || empty($appointmentTime)) {
-                echo "All fields are required!";
-                return;
+                $_SESSION['error'] = "All fields are required!";
+                header("Location: /appointment-form.php"); // Redirect back to the form
+                exit();
             }
 
             // Check if phone number is valid (10 digits)
             if (!preg_match('/^[0-9]{10}$/', $phone)) {
-                echo "Invalid phone number format!";
-                return;
+                $_SESSION['error'] = "Invalid phone number format!";
+                header("Location: /appointment-form.php");
+                exit();
             }
 
             // Prepare the SQL query for inserting the appointment
@@ -52,9 +69,13 @@ class AppointmentController {
 
             // Execute the query and check if the insertion was successful
             if ($stmt->execute()) {
-                echo "Appointment booked successfully!";
+                $_SESSION['success'] = "Appointment booked successfully!";
+                header("Location: /appointment-confirmation.php"); // Redirect to a confirmation page
+                exit();
             } else {
-                echo "Failed to book appointment.";
+                $_SESSION['error'] = "Failed to book appointment. Please try again.";
+                header("Location: /appointment-form.php"); // Redirect back to the form
+                exit();
             }
         } else {
             // Render the create appointment form (for GET requests)
@@ -64,14 +85,16 @@ class AppointmentController {
 
     // Method to view appointments (optional, can be expanded)
     public function view() {
+        // Fetch all appointments from the database
         $query = "SELECT * FROM appointments";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
 
+        // Fetch results as an associative array
         $appointments = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-        // You can render a view to display the appointments, for example:
-            include __DIR__ . '/../views/appointments/create.php';
+        // Render the view (for example, a list of appointments)
+        include __DIR__ . '/../views/appointments/view.php';
     }
 }
 ?>
